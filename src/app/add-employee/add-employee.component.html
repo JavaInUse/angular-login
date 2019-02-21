@@ -1,0 +1,21 @@
+<div class="col-md-6">
+  <h2 class="text-center">Add Employee</h2>
+  <form>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="name" [(ngModel)]="user.name" placeholder="Name" name="name" class="form-control" id="name">
+    </div>
+  
+    <div class="form-group">
+      <label for="designation">Designation:</label>
+      <input [(ngModel)]="user.designation" placeholder="Designation" name="designation" class="form-control" id="designation">
+    </div>
+  
+    <div class="form-group">
+      <label for="empId">Employee Id</label>
+      <input [(ngModel)]="user.empId" placeholder="Employee Id" name="Employee Id" class="form-control" id="employeeid">
+    </div>
+  
+    <button class="btn btn-success" (click)="createEmployee()">Create</button>
+  </form>
+  </div>
