@@ -3,8 +3,11 @@
   <div><a href="https://www.javainuse.com" class="navbar-brand">JavaInUse</a></div>
   
   <ul class="navbar-nav">
-    <li><a  routerLink="/" class="nav-link">View Employees</a></li>
-    <li><a  routerLink="/addemployee" class="nav-link">Add New Employee</a></li>
+    <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/" class="nav-link">View Employees</a></li>
+    <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/addemployee" class="nav-link">Add New Employee</a></li>
+    <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
+    <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a></li>
+  
   
   </ul>
   

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 export class Employee{
   constructor(
@@ -20,10 +20,17 @@ export class HttpClientService {
   ) { 
      }
 
+     
+
      getEmployees()
   {
+    let basicString=this.getHeaders();
+
+    let headers=new HttpHeaders(
+      {Authorization:basicString}
+    );
     console.log("test call");
-    return this.httpClient.get<Employee[]>('http://localhost:8080/employees');
+    return this.httpClient.get<Employee[]>('http://localhost:8080/employees',{headers});
   }
 
   public deleteEmployee(employee) {
@@ -33,4 +40,15 @@ export class HttpClientService {
   public createEmployee(employee) {
     return this.httpClient.post<Employee>("http://localhost:8080/employees", employee);
   }
+
+
+
+getHeaders(){
+  let username='admin'
+  let password='password'
+
+  let  basicString='Basic '+window.btoa(username + ':' + password)
+  return basicString;
+}
+
 }

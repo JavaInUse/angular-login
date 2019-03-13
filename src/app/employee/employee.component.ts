@@ -9,15 +9,16 @@ import { HttpClientService, Employee } from '../service/httpclient.service';
 export class EmployeeComponent implements OnInit {
 
   employees:Employee[];
+    
    
   constructor(
     private httpClientService:HttpClientService
   ) { }
 
   ngOnInit() {
-    this.httpClientService.getEmployees().subscribe(
-     response =>this.handleSuccessfulResponse(response),
-    );
+     this.httpClientService.getEmployees().subscribe(
+      response =>this.handleSuccessfulResponse(response),
+     );
   }
 
 handleSuccessfulResponse(response)
@@ -26,10 +27,10 @@ handleSuccessfulResponse(response)
 }
 
 deleteEmployee(employee: Employee): void {
-  this.httpClientService.deleteEmployee(employee)
-    .subscribe( data => {
+   this.httpClientService.deleteEmployee(employee)
+     .subscribe( data => {
       this.employees = this.employees.filter(u => u !== employee);
-    })
+   })
 };
 
 
