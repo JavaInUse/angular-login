@@ -9,4 +9,8 @@ and Angular 7 and performing authentication using Login Page.
 	 Also will be implementing session management so that
 	 only a used who is logged in can view the pages. Else he will be directed to the login page. In the next tutorial
 	 we will be implementing <a href="https://www.javainuse.com/spring/ang7-basic">Basic Authentication using Angular 7 and Spring Boot.</a><br>
+   
+   [![Watch the video](https://www.javainuse.com/ang1-you.JPG)](https://youtu.be/QQxqHT7yhHc)
+
+Complete explanation can be found at - https://www.javainuse.com/spring/ang7-login
 	
